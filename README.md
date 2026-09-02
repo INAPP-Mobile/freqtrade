@@ -8,7 +8,7 @@ Freqtrade is a free, open source crypto trading bot written in Python supporting
 
 # Deploy and Host
 
-Deploy with one click. On first boot the container seeds `/freqtrade/user_data` with a strategy skeleton and a safe default config (spot market, Binance pairs, dry-run wallet of 1000 USDT), then starts trading in dry-run mode. Persistent data (config, strategies, SQLite trade database, logs) lives on a Railway volume at `/freqtrade/user_data`.
+Deploy with one click. On first boot the container seeds `/freqtrade/user_data` with a strategy skeleton and a safe default config (spot market, Kraken USD pairs, dry-run wallet of 1000 USD), then starts trading in dry-run mode. Persistent data (config, strategies, SQLite trade database, logs) lives on a Railway volume at `/freqtrade/user_data`.
 
 ## About Hosting
 
@@ -26,7 +26,7 @@ Self-hosting keeps your strategies, API keys, and trade data entirely under your
 ## Common Use Cases
 
 - **Paper trading**: Validate strategies risk-free with the default dry-run configuration before committing funds
-- **Live spot trading**: Add exchange API keys once your strategy proves itself in dry-run
+- **Live spot trading**: Add exchange API keys once your strategy proves itself in dry-run (Kraken by default — works worldwide including US; switch `FREQTRADE__EXCHANGE__NAME` to binance/kucoin/gate/okx if your region supports it)
 - **Strategy development**: Hot-edit Python strategies in the mounted volume; the bot reloads them via the API or restart
 - **24/7 unattended trading**: Railway keeps the bot running with automatic restarts and persistent trade history in SQLite
 - **Telegram control**: Attach a Telegram bot to check profit, force entries/exits, and control the bot from your phone
@@ -36,7 +36,7 @@ Self-hosting keeps your strategies, API keys, and trade data entirely under your
 **Public Dependencies:** None — everything runs in a single container with an embedded SQLite database on the attached volume.
 
 **Private Dependencies:**
-- A cryptocurrency exchange account (Binance by default; dry-run works without keys)
+- A cryptocurrency exchange account (Kraken by default — dry-run works without keys)
 - Telegram bot token (optional, for remote bot control)
 - Exchange API key + secret (only for live trading, not dry-run)
 
@@ -50,7 +50,7 @@ Self-hosting keeps your strategies, API keys, and trade data entirely under your
 | `FREQTRADE__DRY_RUN` | `true` | Paper trading mode — keep `true` until strategy is proven |
 | `FREQTRADE__DRY_RUN_WALLET` | `1000` | Simulated wallet balance |
 | `FREQTRADE__STRATEGY` | `SampleStrategy` | Strategy class to run |
-| `FREQTRADE__EXCHANGE__NAME` | `binance` | Exchange (binance, kraken, kucoin, gate, okx...) |
+| `FREQTRADE__EXCHANGE__NAME` | `kraken` | Exchange (kraken, binance, kucoin, gate, okx...) |
 | `FREQTRADE__EXCHANGE__KEY` / `__SECRET` | empty | Exchange API keys (live trading only) |
 | `FREQTRADE__TELEGRAM__ENABLED` | `false` | Enable Telegram control bot |
 | `FREQTRADE__TELEGRAM__TOKEN` / `__CHAT_ID` | empty | Telegram bot credentials |
