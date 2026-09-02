@@ -40,6 +40,12 @@ Self-hosting keeps your strategies, API keys, and trade data entirely under your
 - Telegram bot token (optional, for remote bot control)
 - Exchange API key + secret (only for live trading, not dry-run)
 
+### Deployment Dependencies
+
+- **freqtradeorg/freqtrade:2026.8** — official pinned Docker image (Docker Hub)
+- **Kraken REST/WebSocket API** — market data + paper-trading simulation (no account required for dry-run)
+- **SQLite** — embedded trade database on the attached Railway volume (no external database service needed)
+
 ## Environment Variables
 
 | Variable | Default | Description |
