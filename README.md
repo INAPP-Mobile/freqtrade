@@ -64,3 +64,12 @@ Full configuration reference: [freqtrade.io/en/stable/configuration](https://www
 3. Edit strategies under `user_data/strategies/` on the volume (or paste into FreqUI's strategy editor)
 4. Set `FREQTRADE__STRATEGY` to your strategy class name and redeploy
 5. When ready for live trading: add exchange keys + set `FREQTRADE__DRY_RUN=false`
+## Links
+
+- [Freqtrade documentation](https://www.freqtrade.io/en/stable/)
+- [FreqUI guide](https://www.freqtrade.io/en/stable/frequi/)
+- [Strategy examples](https://www.freqtrade.io/en/stable/strategy-customization/)
+- [Freqtrade GitHub](https://github.com/freqtrade/freqtrade)
+- [Exchange support list](https://www.freqtrade.io/en/stable/exchanges/)
+
+<!-- Template icon: https://files.catbox.moe/xf7ue3.svg -->
