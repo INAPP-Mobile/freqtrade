@@ -3,6 +3,10 @@
     "value": "8080",
     "description": "HTTP server port. Must stay 8080 — it matches the Railway domain target port configured in this template."
   },
+  "FREQTRADE__API_SERVER__USERNAME": {
+    "value": "freqtrader",
+    "description": "Username for the FreqUI web interface and REST API. Log in at / with this username and FREQTRADE__API_SERVER__PASSWORD."
+  },
   "FREQTRADE__API_SERVER__PASSWORD": {
     "value": "${{secret(16)}}",
     "description": "Password for the FreqUI web interface and REST API (min 8 chars). Auto-generated per deployment — log in at / with username 'freqtrader'."
