@@ -1,0 +1,50 @@
+{
+  "PORT": {
+    "value": "8080",
+    "description": "HTTP server port. Must stay 8080 — it matches the Railway domain target port configured in this template."
+  },
+  "FREQTRADE__API_SERVER__PASSWORD": {
+    "value": "${{secret(16)}}",
+    "description": "Password for the FreqUI web interface and REST API (min 8 chars). Auto-generated per deployment — log in at / with username 'freqtrader'."
+  },
+  "FREQTRADE__API_SERVER__JWT_SECRET_KEY": {
+    "value": "${{secret(32)}}",
+    "description": "Secret used to sign API auth tokens (min 32 chars). Auto-generated per deployment."
+  },
+  "FREQTRADE__API_SERVER__WS_TOKEN": {
+    "value": "${{secret(32)}}",
+    "description": "Token for the FreqUI WebSocket connection (min 32 chars). Auto-generated per deployment."
+  },
+  "FREQTRADE__EXCHANGE__NAME": {
+    "value": "kraken",
+    "description": "CCXT exchange id (kraken, binance, kucoin, gate, okx...). Kraken default works worldwide including US; binance is geo-blocked on some hosts."
+  },
+  "FREQTRADE__EXCHANGE__KEY": {
+    "value": "",
+    "description": "Exchange API key — live trading only. Leave empty for dry-run paper trading."
+  },
+  "FREQTRADE__EXCHANGE__SECRET": {
+    "value": "",
+    "description": "Exchange API secret — live trading only. Leave empty for dry-run paper trading."
+  },
+  "FREQTRADE__STRATEGY": {
+    "value": "SampleStrategy",
+    "description": "Strategy class name from user_data/strategies/. Replace with your own strategy once uploaded via FreqUI or git."
+  },
+  "FREQTRADE__DRY_RUN": {
+    "value": "true",
+    "description": "Paper trading mode — simulated orders, no real funds. Keep true until your strategy is proven."
+  },
+  "FREQTRADE__TELEGRAM__ENABLED": {
+    "value": "false",
+    "description": "Enable the Telegram control bot to manage your bot from chat."
+  },
+  "FREQTRADE__TELEGRAM__TOKEN": {
+    "value": "",
+    "description": "Telegram bot token from @BotFather. Required when Telegram is enabled."
+  },
+  "FREQTRADE__TELEGRAM__CHAT_ID": {
+    "value": "",
+    "description": "Your Telegram chat id for bot notifications. Required when Telegram is enabled."
+  }
+}

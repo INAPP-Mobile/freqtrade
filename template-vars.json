@@ -1,0 +1,74 @@
+{
+  "PORT": {
+    "name": "HTTP Server Port",
+    "defaultValue": "8080",
+    "description": "HTTP server port. Must stay 8080 — it matches the Railway domain target port configured in this template.",
+    "isOptional": true
+  },
+  "FREQTRADE__API_SERVER__PASSWORD": {
+    "name": "FreqUI / API Password",
+    "defaultValue": "${{secret(16)}}",
+    "description": "Password for the FreqUI web interface and REST API (min 8 chars). Auto-generated per deployment — log in at / with username 'freqtrader'.",
+    "isOptional": false
+  },
+  "FREQTRADE__API_SERVER__JWT_SECRET_KEY": {
+    "name": "API JWT Secret",
+    "defaultValue": "${{secret(32)}}",
+    "description": "Secret used to sign API auth tokens (min 32 chars). Auto-generated per deployment.",
+    "isOptional": false
+  },
+  "FREQTRADE__API_SERVER__WS_TOKEN": {
+    "name": "WebSocket Token",
+    "defaultValue": "${{secret(32)}}",
+    "description": "Token for the FreqUI WebSocket connection (min 32 chars). Auto-generated per deployment.",
+    "isOptional": false
+  },
+  "FREQTRADE__EXCHANGE__NAME": {
+    "name": "Exchange",
+    "defaultValue": "kraken",
+    "description": "CCXT exchange id (kraken, binance, kucoin, gate, okx...). Kraken default works worldwide including US; binance is geo-blocked on some hosts.",
+    "isOptional": true
+  },
+  "FREQTRADE__EXCHANGE__KEY": {
+    "name": "Exchange API Key",
+    "defaultValue": "",
+    "description": "Exchange API key — live trading only. Leave empty for dry-run paper trading.",
+    "isOptional": true
+  },
+  "FREQTRADE__EXCHANGE__SECRET": {
+    "name": "Exchange API Secret",
+    "defaultValue": "",
+    "description": "Exchange API secret — live trading only. Leave empty for dry-run paper trading.",
+    "isOptional": true
+  },
+  "FREQTRADE__STRATEGY": {
+    "name": "Strategy Class",
+    "defaultValue": "SampleStrategy",
+    "description": "Strategy class name from user_data/strategies/. Replace with your own strategy once uploaded via FreqUI or git.",
+    "isOptional": true
+  },
+  "FREQTRADE__DRY_RUN": {
+    "name": "Dry Run",
+    "defaultValue": "true",
+    "description": "Paper trading mode — simulated orders, no real funds. Keep true until your strategy is proven.",
+    "isOptional": true
+  },
+  "FREQTRADE__TELEGRAM__ENABLED": {
+    "name": "Enable Telegram",
+    "defaultValue": "false",
+    "description": "Enable the Telegram control bot to manage your bot from chat.",
+    "isOptional": true
+  },
+  "FREQTRADE__TELEGRAM__TOKEN": {
+    "name": "Telegram Bot Token",
+    "defaultValue": "",
+    "description": "Telegram bot token from @BotFather. Required when Telegram is enabled.",
+    "isOptional": true
+  },
+  "FREQTRADE__TELEGRAM__CHAT_ID": {
+    "name": "Telegram Chat ID",
+    "defaultValue": "",
+    "description": "Your Telegram chat id for bot notifications. Required when Telegram is enabled.",
+    "isOptional": true
+  }
+}
