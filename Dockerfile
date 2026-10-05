@@ -4,7 +4,7 @@
 # - seeds /freqtrade/user_data on first boot (strategies skeleton + default config)
 # - enables the REST API + bundled FreqUI on 0.0.0.0:8080
 # - runs as root so the Railway-managed volume (root-owned) is writable
-FROM freqtradeorg/freqtrade:2026.8
+FROM freqtradeorg/freqtrade:2026.9
 
 USER root
 
